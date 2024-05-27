@@ -21,7 +21,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pb_login_clicked();
+    void on_pb_go_clicked();
 
     void on_pb_cancel_clicked();
 

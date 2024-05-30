@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QDebug>
+#include <QMessageBox>
+#include <QString>
+#include "dialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -14,15 +16,17 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-private Q_SLOTS:
-    void pushbuttonClicked();
-    void pushbuttonToggle(bool checked);
-
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pb_go_clicked();
+
+    void on_pb_cancel_clicked();
+
 private:
     Ui::MainWindow *ui;
+    Dialog* dialogWin;
 };
 #endif // MAINWINDOW_H

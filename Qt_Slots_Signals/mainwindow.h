@@ -22,6 +22,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private Q_SLOTS:
     void updateTime();
 
@@ -39,5 +40,6 @@ private:
     int prevMs, prevS, prevM;
     int lap;
     bool flag = true;
+    class StopWatch;
 };
 #endif // MAINWINDOW_H

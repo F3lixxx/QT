@@ -13,15 +13,14 @@ MainWindow::MainWindow(QWidget *parent)
     lap = 0;
     timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(updateTime()));
-
     lb_lap = new QLabel;
-    //lb_lap->setText("0:0:0");
-    // connect(lb_lap, &QPushButton::clicked, this, &MainWindow::on_pb_lap_clicked);
-     ui->verticalLayout->addWidget(lb_lap);
 
+    ui->verticalLayout->addWidget(lb_lap);
+    ui->pb_lap->setDisabled(true);
     ui->pb_start_and_stop->setText("Start");
     ui->pb_lap->setText("Lap");
     ui->pb_reset->setText("Reset");
+
 }
 
 MainWindow::~MainWindow()
@@ -29,6 +28,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+class StopWatch{
+public:
 void MainWindow::updateTime(){
     ms++;
     if(ms >= 1000){
@@ -48,10 +49,12 @@ void MainWindow::on_pb_start_and_stop_clicked()
 {
     flag = !flag;
     if(flag){
+        ui->pb_lap->setDisabled(true);
         ui->pb_start_and_stop->setText("Start");
         timer->stop();
     }
     else{
+        ui->pb_lap->setDisabled(false);
         ui->pb_start_and_stop->setText("Stop");
         timer->start(1);
     }
@@ -71,8 +74,9 @@ void MainWindow::on_pb_reset_clicked()
     s = 0;
     ms = 0;
     lap = 0;
+    lb_lap->clear();
     ui->lb_minute->setText(QString::number(m) + " : ");
     ui->lb_sec->setText(QString::number(s));
     ui->lb_msec->setText(" : " + QString::number(ms));
 }
-
+}

@@ -15,9 +15,9 @@ MainWindow::MainWindow(QWidget *parent) :
     pb_lap = ui->pb_lap;
     pb_reset = ui->pb_reset;
 
-    connect(pb_start_stop, &QPushButton::clicked, this, &MainWindow::on_pb_start_stop_clicked);
-    connect(pb_lap, &QPushButton::clicked, this, &MainWindow::on_pb_lap_clicked);
-    connect(pb_reset, &QPushButton::clicked, this, &MainWindow::on_pb_reset_clicked);
+    // connect(pb_start_stop, &QPushButton::clicked, this, &MainWindow::on_pb_start_stop_clicked);
+    // connect(pb_lap, &QPushButton::clicked, this, &MainWindow::on_pb_lap_clicked);
+    // connect(pb_reset, &QPushButton::clicked, this, &MainWindow::on_pb_reset_clicked);
     connect(watch, &Stopwatch::timeUpdated, this, &MainWindow::updateTime);
     connect(watch, &Stopwatch::lapUpdated, this, &MainWindow::updateLap);
 

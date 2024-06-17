@@ -9,7 +9,7 @@ Stopwatch::Stopwatch(QObject *parent) :
     running(false)
 {
     connect(timer, &QTimer::timeout, this, &Stopwatch::onTimeout);
-    timer->setInterval(100); // 100 ms interval
+    timer->setInterval(100);
 }
 
 void Stopwatch::start()

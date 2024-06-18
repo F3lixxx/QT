@@ -6,6 +6,7 @@
 #include <QTextBrowser>
 #include <QPushButton>
 #include <QTime>
+#include <QTimer>
 #include "stopwatch.h"
 
 QT_BEGIN_NAMESPACE

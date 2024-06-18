@@ -59,12 +59,12 @@ void MainWindow::on_pb_reset_clicked()
 
 void MainWindow::updateTime(int elapsedTime)
 {
-    QString time = QTime::fromMSecsSinceStartOfDay(elapsedTime).toString("mm:ss");
+    QString time = QTime::fromMSecsSinceStartOfDay(elapsedTime).toString("mm:ss.z");
     lb_timer->setText(time);
 }
 
 void MainWindow::updateLap(int lapNumber, int lapTime)
 {
-    QString time = QTime::fromMSecsSinceStartOfDay(lapTime).toString("mm:ss");
+    QString time = QTime::fromMSecsSinceStartOfDay(lapTime).toString("mm:ss.z");
     tb_lap->append("Lap " + QString::number(lapNumber) + ", Time: " + time);
 }
